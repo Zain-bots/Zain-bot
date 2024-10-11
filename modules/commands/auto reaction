@@ -1,0 +1,18 @@
+function handleMessage(sender_psid, message) {
+    let response;
+    
+    if (message && message.text) {
+        const userMessage = message.text.toLowerCase();
+
+        // Default reply
+        response = { "text": "Thanks for your message! 😊" };
+        
+        // Send auto reaction for all messages
+        sendAutoReaction(sender_psid, '😊'); // Reaction emoji
+
+        // Call API to send the response
+        callSendAPI(sender_psid, response);
+    } else {
+        console.error('Message is invalid or missing text');
+    }
+}
