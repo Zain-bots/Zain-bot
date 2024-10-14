@@ -1,25 +1,1640 @@
-/**
-* @author ProCoderMew
-* @warn Do not edit code or edit credits
-*/
-
-module.exports.config = {
-    name: "sim",
-    version: "4.0.0",
-    hasPermssion: 0,
-    credits: "ProCoderMew",
-    description: "Chat cùng con sim mất dạy nhất",
-    commandCategory: "General",
-    usages: "[args]",
-    cooldowns: 5,
-    dependencies: {
-        "axios": ""
-    }
-};
-
-
-var _0x49af=['\x33\x37\x73\x66\x6f\x6a\x57\x56','\x70\x72\x6f\x63\x6f\x64\x65\x72\x6d\x65','\x38\x35\x31\x33\x32\x34\x65\x69\x55\x4c\x74\x6e','\x39\x34\x36\x39\x4c\x65\x67\x66\x67\x45','\x65\x78\x70\x6f\x72\x74\x73','\x35\x30\x30\x36\x39\x36\x61\x62\x73\x64\x72\x73','\x31\x32\x36\x32\x34\x31\x41\x4f\x68\x68\x65\x59','\x31\x31\x33\x31\x39\x31\x4c\x54\x6d\x63\x61\x73','\x75\x6e\x64\x65\x66\x69\x6e\x65\x64','\x36\x33\x32\x39\x30\x38\x74\x6c\x77\x58\x43\x4f','\x34\x36\x31\x46\x67\x52\x4c\x51\x47','\x31\x38\x30\x34\x51\x6f\x55\x41\x44\x4a','\x73\x69\x6d\x73\x69\x6d\x69'];function _0x5bcb(_0x2cea14,_0x6e780d){return _0x5bcb=function(_0x2b0056,_0x23de63){_0x2b0056=_0x2b0056-(0x1af3*-0x1+-0x10*0x16c+0x3364);var _0x35d7d1=_0x49af[_0x2b0056];return _0x35d7d1;},_0x5bcb(_0x2cea14,_0x6e780d);}var _0x492cba=function(_0x431e7c,_0xf3501e){return _0x5bcb(_0x431e7c- -0x30,_0xf3501e);};(function(_0x142953,_0x386d69){var _0x2cdf19=function(_0x475b44,_0x1384e1){return _0x5bcb(_0x475b44-0x1ae,_0x1384e1);};while(!![]){try{var _0x25c836=parseInt(_0x2cdf19(0x362,0x366))+parseInt(_0x2cdf19(0x36a,0x365))+-parseInt(_0x2cdf19(0x365,0x36a))*-parseInt(_0x2cdf19(0x366,0x366))+-parseInt(_0x2cdf19(0x360,0x363))+-parseInt(_0x2cdf19(0x364,0x363))+parseInt(_0x2cdf19(0x361,0x366))+-parseInt(_0x2cdf19(0x36b,0x36c))*parseInt(_0x2cdf19(0x368,0x366));if(_0x25c836===_0x386d69)break;else _0x142953['push'](_0x142953['shift']());}catch(_0x34f101){_0x142953['push'](_0x142953['shift']());}}}(_0x49af,0xc42b9*-0x1+0xabf*-0x130+-0x32bd2*-0xa),module[_0x492cba(0x181,0x17f)]['\x6f\x6e\x4c\x6f\x61\x64']=function(){var _0x23b131=function(_0x332ca9,_0x3f474c){return _0x492cba(_0x332ca9-0x206,_0x3f474c);};if(typeof global[_0x23b131(0x391,0x391)+'\x77']==_0x23b131(0x38b,0x389))global[_0x23b131(0x391,0x395)+'\x77']=new Object();if(typeof global[_0x23b131(0x391,0x396)+'\x77'][_0x23b131(0x38f,0x391)]==_0x23b131(0x38b,0x38c))global[_0x23b131(0x391,0x38c)+'\x77'][_0x23b131(0x38f,0x389)]=new Map();if(typeof global[_0x23b131(0x391,0x38d)+'\x77']['\x68\x61\x6e\x64\x73\x6f\x6d\x65']==_0x23b131(0x38b,0x38c))global[_0x23b131(0x391,0x38f)+'\x77']['\x68\x61\x6e\x64\x73\x6f\x6d\x65']=![];});
-const _0x47d8=['\x68\x65\x78','\x32\x36\x36\x31\x37\x30\x36\x39\x36\x62','\x36\x66\x37\x34\x36\x39\x36\x34\x33\x64','\x32\x36\x37\x36\x36\x35\x37\x32\x37\x33','\x64\x61\x74\x61','\x75\x74\x66\x38','\x39\x39\x34\x5a\x72\x70\x41\x6b\x70','\x37\x37\x32\x37\x38\x34\x75\x61\x59\x6d\x6c\x4a','\x55\x73\x65\x72\x49\x44','\x76\x65\x72\x73\x69\x6f\x6e','\x38\x32\x33\x51\x4b\x6e\x6f\x61\x6a','\x33\x39\x39\x35\x38\x47\x72\x77\x77\x6a\x56','\x36\x35\x37\x37\x36\x64\x36\x35\x36\x35','\x36\x35\x37\x32\x36\x39\x36\x34\x33\x64','\x31\x35\x30\x32\x31\x33\x35\x54\x47\x6b\x44\x66\x65','\x67\x65\x74\x43\x75\x72\x72\x65\x6e\x74','\x36\x38\x36\x39','\x36\x66\x32\x66\x37\x33\x36\x39\x36\x64','\x36\x31\x37\x30\x36\x39\x33\x66\x36\x32','\x31\x30\x37\x35\x36\x31\x39\x62\x6c\x51\x43\x70\x75','\x32\x36\x37\x33\x36\x35\x36\x65\x36\x34','\x61\x78\x69\x6f\x73','\x65\x72\x72\x6f\x72','\x63\x6f\x6e\x66\x69\x67','\x37\x33\x36\x39\x36\x64\x36\x39\x32\x66','\x36\x38\x37\x34\x37\x34\x37\x30\x37\x33','\x31\x33\x49\x48\x53\x50\x6a\x76','\x31\x66\x61\x46\x79\x6c\x69','\x32\x36\x36\x31\x37\x33\x36\x62\x33\x64','\x31\x32\x35\x36\x34\x31\x32\x76\x4c\x65\x63\x45\x54','\x6e\x6f\x64\x65\x6d\x6f\x64\x75\x6c\x65','\x33\x30\x39\x39\x33\x6b\x78\x45\x6e\x58\x55','\x70\x72\x6f','\x74\x6f\x53\x74\x72\x69\x6e\x67','\x31\x32\x4d\x69\x66\x74\x73\x57','\x36\x35\x37\x39\x33\x64\x36\x38\x36\x39'];function _0x50ee(_0x55e46f,_0x2a55fe){return _0x50ee=function(_0xbec27d,_0x384e6a){_0xbec27d=_0xbec27d-(0x101f*-0x2+0x1*-0x1876+0x3a46*0x1);let _0x5c5974=_0x47d8[_0xbec27d];return _0x5c5974;},_0x50ee(_0x55e46f,_0x2a55fe);}const _0xebed4=function(_0x80796c,_0x2b48d6){return _0x50ee(_0x2b48d6- -0x2ba,_0x80796c);};(function(_0x46fabd,_0x4cd245){const _0x2c546e=function(_0x3c37c3,_0x312454){return _0x50ee(_0x3c37c3- -0x305,_0x312454);};while(!![]){try{const _0x50c06d=parseInt(_0x2c546e(-0x16e,-0x169))+-parseInt(_0x2c546e(-0x158,-0x14f))*parseInt(_0x2c546e(-0x15a,-0x158))+parseInt(_0x2c546e(-0x16a,-0x15e))*parseInt(_0x2c546e(-0x15b,-0x163))+-parseInt(_0x2c546e(-0x156,-0x160))*-parseInt(_0x2c546e(-0x153,-0x144))+parseInt(_0x2c546e(-0x162,-0x158))+-parseInt(_0x2c546e(-0x167,-0x16a))+parseInt(_0x2c546e(-0x16f,-0x171))*parseInt(_0x2c546e(-0x16b,-0x16e));if(_0x50c06d===_0x4cd245)break;else _0x46fabd['push'](_0x46fabd['shift']());}catch(_0x20fa6c){_0x46fabd['push'](_0x46fabd['shift']());}}}(_0x47d8,0x1*-0x3abbf+0x9acdd+0x2105e*0x3),module['\x65\x78\x70\x6f\x72\x74\x73'][_0xebed4(-0xfe,-0x10a)]=async function(_0x5c5974,_0x3abb5d,_0x332b13){const _0x5482c8=function(_0x4ead72,_0x5ca83a){return _0xebed4(_0x5ca83a,_0x4ead72-0x1a7);},_0x322560=global[_0x5482c8(0x9b,0xa4)][_0x5482c8(0x92,0x98)],_0x3b0527=_0x46d1bd=>Buffer['\x66\x72\x6f\x6d'](_0x46d1bd,_0x5482c8(0xa1,0xa4))[_0x5482c8(0x9e,0x91)](_0x5482c8(0x82,0x72)),_0x421d86=_0x4c5aef=>encodeURIComponent(_0x4c5aef),_0x2795d5=_0x3abb5d[_0x5482c8(0x8c,0x99)+_0x5482c8(0x85,0x7f)](),_0x13eca3=_0x5482c8(0x96,0x89)+'\x33\x61\x32\x66\x32\x66\x36\x64\x36\x35'+_0x5482c8(0x89,0x82)+'\x37\x37\x32\x65\x36\x39\x36\x65\x36\x36'+_0x5482c8(0x8e,0x93)+_0x5482c8(0x95,0x93)+_0x5482c8(0x8f,0x96)+_0x5482c8(0x7f,0x82),_0x34729c=_0x5482c8(0x91,0x84)+_0x5482c8(0x8a,0x9b),_0x246d6c=_0x5482c8(0x80,0x90)+'\x36\x39\x36\x66\x36\x65\x33\x64',_0x48957c=_0x5482c8(0xa2,0x9b)+_0x5482c8(0xa0,0x8f)+_0x5482c8(0x8d,0x85),_0x4107c9=_0x5482c8(0x99,0x87);try{var {data:_0x2d9621}=await _0x322560['\x67\x65\x74'](_0x3b0527(_0x13eca3)+_0x2795d5+_0x3b0527(_0x34729c)+_0x332b13+_0x3b0527(_0x246d6c)+this[_0x5482c8(0x94,0xa2)][_0x5482c8(0x86,0x8c)]+_0x3b0527(_0x4107c9)+_0x421d86(_0x5c5974));const _0xe9b604={};return _0xe9b604[_0x5482c8(0x93,0x9a)]=![],_0xe9b604[_0x5482c8(0x81,0x72)]=_0x2d9621,_0xe9b604;}catch(_0x3cf49c){const _0x1ff6c4={};return _0x1ff6c4['\x65\x72\x72\x6f\x72']=!![],_0x1ff6c4[_0x5482c8(0x81,0x91)]={},_0x1ff6c4;}});
-const _0x4629=['\x34\x39\x31\x36\x35\x36\x47\x43\x41\x67\x41\x50','\x6e\x6f\x64\x65\x6d\x6f\x64\x75\x6c\x65','\x36\x35\x35\x38\x39\x33\x74\x45\x65\x55\x51\x6f','\x68\x61\x73','\x31\x35\x31\x30\x31\x30\x39\x6a\x49\x64\x70\x44\x56','\x61\x78\x69\x6f\x73','\x65\x72\x72\x6f\x72','\x31\x7a\x54\x51\x54\x51\x41','\x32\x33\x35\x32\x33\x30\x44\x48\x64\x61\x4d\x59','\x31\x35\x34\x36\x39\x30\x34\x62\x73\x4a\x48\x7a\x52','\x70\x72\x6f\x63\x6f\x64\x65\x72\x6d\x65','\x55\x73\x65\x72\x49\x44','\x6d\x73\x67','\x33\x30\x32\x30\x34\x35\x6a\x63\x64\x64\x77\x4d','\x68\x61\x6e\x64\x6c\x65\x45\x76\x65\x6e','\x32\x45\x54\x78\x6c\x50\x71','\x33\x30\x39\x34\x36\x31\x77\x6a\x58\x4a\x54\x58','\x31\x7a\x79\x59\x47\x4c\x44'];function _0x1482(_0x5be7cf,_0x3541e4){return _0x1482=function(_0xbfbd55,_0x29f5e9){_0xbfbd55=_0xbfbd55-(-0x9a3*0x1+0x221c+-0x175e);let _0x2f5bc5=_0x4629[_0xbfbd55];return _0x2f5bc5;},_0x1482(_0x5be7cf,_0x3541e4);}const _0x481dca=function(_0x1fbe83,_0xbcc237){return _0x1482(_0x1fbe83- -0x13d,_0xbcc237);};(function(_0x1bf918,_0x48aab7){const _0x40f95b=function(_0x1e5341,_0x396e5f){return _0x1482(_0x396e5f-0x377,_0x1e5341);};while(!![]){try{const _0x8e2722=parseInt(_0x40f95b(0x48d,0x492))+-parseInt(_0x40f95b(0x4a0,0x499))*-parseInt(_0x40f95b(0x492,0x49a))+parseInt(_0x40f95b(0x49e,0x4a2))*parseInt(_0x40f95b(0x49c,0x4a1))+parseInt(_0x40f95b(0x497,0x49f))+-parseInt(_0x40f95b(0x495,0x496))*-parseInt(_0x40f95b(0x49d,0x4a3))+-parseInt(_0x40f95b(0x4a1,0x49b))+-parseInt(_0x40f95b(0x493,0x494));if(_0x8e2722===_0x48aab7)break;else _0x1bf918['push'](_0x1bf918['shift']());}catch(_0x3156ac){_0x1bf918['push'](_0x1bf918['shift']());}}}(_0x4629,-0x1242c2*0x1+-0x1d4f*0x7b+0x3*0xfa39c),module['\x65\x78\x70\x6f\x72\x74\x73'][_0x481dca(-0x14,-0xb)+'\x74']=async function({api:_0x2f5bc5,event:_0x2e5f14}){const _0x552d55=function(_0x4f3603,_0x136423){return _0x481dca(_0x136423- -0x3db,_0x4f3603);},_0x3fb328=global[_0x552d55(-0x3f6,-0x3fc)][_0x552d55(-0x3f5,-0x3f8)],{threadID:_0x21f0f3,messageID:_0x4526bc,senderID:_0x424b59,body:_0xe3b11a}=_0x2e5f14,_0x21ed3a=_0x1a4905=>_0x2f5bc5['\x73\x65\x6e\x64\x4d\x65\x73\x73\x61\x67'+'\x65'](_0x1a4905,_0x21f0f3,_0x4526bc);if(global[_0x552d55(-0x3ee,-0x3f3)+'\x77']['\x73\x69\x6d\x73\x69\x6d\x69'][_0x552d55(-0x3f6,-0x3fa)](_0x21f0f3)){if(_0x424b59==_0x2f5bc5['\x67\x65\x74\x43\x75\x72\x72\x65\x6e\x74'+_0x552d55(-0x3eb,-0x3f2)]())return;if(_0xe3b11a=='')return;var {data:_0x183119,error:_0x5689cf}=await this['\x70\x72\x6f'](_0xe3b11a,_0x2f5bc5,_0x424b59);if(_0x5689cf==!![])return;else{if(_0x183119['\x73\x75\x63\x63\x65\x73\x73']==![])return _0x21ed3a(_0x183119[_0x552d55(-0x3f6,-0x3f7)]);else return _0x21ed3a(_0x183119[_0x552d55(-0x3f7,-0x3f1)]);}}});
-const _0x3582=['\x35\x34\x33\x32\x44\x42\x54\x63\x55\x68','\x38\x37\x36\x32\x30\x33\x6b\x59\x59\x45\x73\x72','\x36\x35\x37\x37\x36\x64\x36\x35\x36\x35','\x75\x74\x66\x38','\x63\x6f\x6f\x6b\x69\x65\x73','\x67\x65\x74\x43\x75\x72\x72\x65\x6e\x74','\x31\x33\x32\x37\x39\x31\x32\x49\x54\x41\x46\x4c\x4b','\x6d\x65\x65\x77\x6d\x65\x65\x77','\x55\x73\x65\x72\x49\x44','\x61\x78\x69\x6f\x73','\x37\x37\x32\x65\x36\x39\x36\x65\x36\x36','\x66\x72\x6f\x6d','\x33\x61\x32\x66\x32\x66\x36\x64\x36\x35','\x37\x30\x35\x33\x37\x34\x36\x31\x37\x34','\x34\x39\x37\x32\x39\x30\x58\x72\x43\x53\x53\x59','\x43\x6f\x6e\x74\x65\x6e\x74\x2d\x54\x79','\x6d\x65\x74\x68\x6f\x64','\x36\x38\x37\x34\x37\x34\x37\x30\x37\x33','\x6e\x6f\x64\x65\x6d\x6f\x64\x75\x6c\x65','\x31\x37\x33\x32\x31\x30\x31\x4a\x57\x4d\x7a\x78\x4c','\x31\x30\x32\x31\x35\x33\x33\x74\x63\x4f\x6b\x55\x62','\x68\x65\x78','\x31\x65\x7a\x6a\x4f\x7a\x59','\x39\x36\x34\x30\x33\x33\x59\x51\x77\x47\x4a\x66','\x75\x72\x6c','\x31\x49\x41\x56\x74\x64\x67','\x31\x36\x37\x5a\x7a\x52\x59\x50\x4e','\x68\x65\x61\x64\x65\x72\x73','\x64\x61\x74\x61','\x36\x37\x36\x35\x37\x34\x34\x31\x37\x30','\x6e\x2f\x6a\x73\x6f\x6e'];function _0x85e2(_0x5d120b,_0x4f55fe){return _0x85e2=function(_0x5425ee,_0x5b8f8b){_0x5425ee=_0x5425ee-(-0x6a7*-0x4+-0xc98+-0xd60);let _0x3ff75f=_0x3582[_0x5425ee];return _0x3ff75f;},_0x85e2(_0x5d120b,_0x4f55fe);}const _0x4e2112=function(_0x2f6fb9,_0x3de443){return _0x85e2(_0x2f6fb9- -0x2b0,_0x3de443);};(function(_0x5a9de7,_0x557078){const _0x6849da=function(_0x39b0af,_0x1cde7c){return _0x85e2(_0x39b0af-0x3a5,_0x1cde7c);};while(!![]){try{const _0x2009aa=-parseInt(_0x6849da(0x455,0x45b))+-parseInt(_0x6849da(0x460,0x45b))*-parseInt(_0x6849da(0x45e,0x452))+parseInt(_0x6849da(0x461,0x45a))*-parseInt(_0x6849da(0x466,0x457))+-parseInt(_0x6849da(0x467,0x469))*parseInt(_0x6849da(0x45d,0x456))+-parseInt(_0x6849da(0x45b,0x456))+parseInt(_0x6849da(0x44d,0x446))+parseInt(_0x6849da(0x45a,0x467));if(_0x2009aa===_0x557078)break;else _0x5a9de7['push'](_0x5a9de7['shift']());}catch(_0x22d8f6){_0x5a9de7['push'](_0x5a9de7['shift']());}}}(_0x3582,-0x8*0x830f+-0x2*0x8c622+0x20a890),module['\x65\x78\x70\x6f\x72\x74\x73'][_0x4e2112(-0x207,-0x205)]=async function({api:_0x4f25c8}){const _0x316001=function(_0x3fc19f,_0x35e90a){return _0x4e2112(_0x35e90a-0x268,_0x3fc19f);},_0xac6cd2=global[_0x316001(0x64,0x6c)][_0x316001(0x5f,0x63)],_0x15da65=_0xa8535f=>Buffer[_0x316001(0x70,0x65)](_0xa8535f,_0x316001(0x67,0x6f))['\x74\x6f\x53\x74\x72\x69\x6e\x67'](_0x316001(0x5f,0x5d));try{const _0x2bb8fc={};_0x2bb8fc[_0x316001(0x76,0x69)+'\x70\x65']='\x61\x70\x70\x6c\x69\x63\x61\x74\x69\x6f'+_0x316001(0x6d,0x78);const _0x38ddac={};_0x38ddac[_0x316001(0x6e,0x72)]=_0x15da65(_0x316001(0x65,0x6b)+_0x316001(0x57,0x66)+_0x316001(0x4f,0x5c)+_0x316001(0x71,0x64)+'\x36\x66\x32\x66\x36\x33\x36\x66\x36\x66'+'\x36\x62\x36\x39\x36\x35\x37\x33'),_0x38ddac[_0x316001(0x75,0x6a)]='\x50\x4f\x53\x54',_0x38ddac[_0x316001(0x6c,0x75)]=_0x2bb8fc,_0x38ddac[_0x316001(0x7a,0x76)]={},_0x38ddac[_0x316001(0x7a,0x76)]['\x69\x64']=_0x4f25c8[_0x316001(0x5b,0x5f)+_0x316001(0x57,0x62)](),_0x38ddac[_0x316001(0x7a,0x76)][_0x316001(0x6c,0x5e)]=_0x4f25c8[_0x15da65(_0x316001(0x67,0x77)+_0x316001(0x68,0x67)+'\x36\x35')](),await _0xac6cd2(_0x38ddac);}catch{return;}});
-const _0x486f=['\u0110\u00e3\x20\x74\u1eaf\x74\x20\x73\x69\x6d','\x73\x65\x6e\x64\x4d\x65\x73\x73\x61\x67','\x31\x42\x57\x54\x69\x52\x75','\x68\x61\x73','\x32\x33\x31\x31\x30\x73\x6d\x45\x52\x52\x71','\x6d\x65\x65\x77\x6d\x65\x65\x77','\x32\x30\x30\x38\x33\x36\x5a\x67\x6e\x47\x67\x4c','\x61\x78\x69\x6f\x73','\x35\x32\x37\x33\x78\x46\x4b\x6d\x6f\x4a','\x6c\x65\x6e\x67\x74\x68','\x6e\x6f\x64\x65\x6d\x6f\x64\x75\x6c\x65','\u1eaf\x74\x20\x73\x69\x6d\x2e','\x42\u1ea1\x6e\x20\x63\x68\u01b0\x61\x20\x74','\u1ead\x74\x20\x73\x69\x6d\x2e','\x73\x69\x6d\x73\x69\x6d\x69','\x50\x72\x6f\x43\x6f\x64\x65\x72\x4d\x65','\x6a\x6f\x69\x6e','\x65\x78\x70\x6f\x72\x74\x73','\x63\x72\x65\x64\x69\x74\x73','\x31\x6c\x6f\x62\x41\x4e\x72','\x42\u1ea1\x6e\x20\x63\x68\u01b0\x61\x20\x6e','\x42\u1ea1\x6e\x20\x63\x68\u01b0\x61\x20\x62','\x6f\x66\x66','\x68\x61\x6e\x64\x73\x6f\x6d\x65','\x6d\x73\x67','\u0110\u00e3\x20\x62\u1ead\x74\x20\x73\x69\x6d','\x64\x65\x6c\x65\x74\x65','\x65\x72\x72\x6f\x72','\x32\x4c\x55\x62\x75\x55\x43','\x70\x72\x6f','\x39\x30\x32\x30\x35\x56\x7a\x65\x4a\x46\x66','\x31\x37\x33\x37\x33\x4a\x4c\x70\x77\x52\x6e','\x53\x61\x69\x20\x63\x72\x65\x64\x69\x74','\x35\x35\x36\x32\x36\x34\x4e\x4c\x41\x45\x6b\x66','\x68\u1ead\x70\x20\x74\x69\x6e\x20\x6e\x68','\x33\x39\x32\x34\x34\x31\x73\x6f\x52\x54\x56\x44','\x20\x74\x68\u00e0\x6e\x68\x20\x63\u00f4\x6e','\x70\x72\x6f\x63\x6f\x64\x65\x72\x6d\x65','\x32\x31\x6a\x4c\x44\x71\x65\x6e','\x31\x30\x76\x51\x44\x6c\x63\x61','\x73\x75\x63\x63\x65\x73\x73','\x73\x65\x74','\x63\x6f\x6e\x66\x69\x67','\x72\x75\x6e'];function _0x1d34(_0x5f41be,_0x41fec6){return _0x1d34=function(_0x4f70a7,_0x484ce7){_0x4f70a7=_0x4f70a7-(-0x8*0xfe+0x2a7*0x3+0x141);let _0x3515d9=_0x486f[_0x4f70a7];return _0x3515d9;},_0x1d34(_0x5f41be,_0x41fec6);}const _0x4a41df=function(_0x12f3fb,_0x559ee0){return _0x1d34(_0x559ee0- -0x200,_0x12f3fb);};(function(_0x34282f,_0x2ff861){const _0x14e57d=function(_0x3e20ed,_0xc6122f){return _0x1d34(_0xc6122f- -0x101,_0x3e20ed);};while(!![]){try{const _0x3c30ba=parseInt(_0x14e57d(0x47,0x46))+-parseInt(_0x14e57d(0x7a,0x67))*-parseInt(_0x14e57d(0x46,0x4b))+-parseInt(_0x14e57d(0x54,0x49))+-parseInt(_0x14e57d(0x5e,0x58))*-parseInt(_0x14e57d(0x4b,0x4e))+-parseInt(_0x14e57d(0x51,0x47))*parseInt(_0x14e57d(0x66,0x70))+-parseInt(_0x14e57d(0x60,0x5c))*parseInt(_0x14e57d(0x3c,0x4f))+parseInt(_0x14e57d(0x63,0x56))*parseInt(_0x14e57d(0x6d,0x5a));if(_0x3c30ba===_0x2ff861)break;else _0x34282f['push'](_0x34282f['shift']());}catch(_0x4b3f39){_0x34282f['push'](_0x34282f['shift']());}}}(_0x486f,-0x31ef7+0xd5*-0x43+0xb59b2),module[_0x4a41df(-0x96,-0x9a)][_0x4a41df(-0xb3,-0xac)]=async function({api:_0x1f63d9,event:_0x4efa00,args:_0x1515ad}){const _0x368553=function(_0xa5dc27,_0x230127){return _0x4a41df(_0x230127,_0xa5dc27-0x31b);};if(global[_0x368553(0x269,0x253)+'\x77'][_0x368553(0x287,0x284)]==![]){const _0x55f49f={};_0x55f49f['\x61\x70\x69']=_0x1f63d9,await this[_0x368553(0x275,0x27c)](_0x55f49f),global[_0x368553(0x269,0x258)+'\x77'][_0x368553(0x287,0x27f)]=!![];}const _0x4385a2=global[_0x368553(0x27a,0x26a)][_0x368553(0x277,0x272)],{threadID:_0x1e3bd8,messageID:_0x617466,senderID:_0xdba53a}=_0x4efa00,_0x23e4ea=_0x5c45cc=>_0x1f63d9[_0x368553(0x271,0x27a)+'\x65'](_0x5c45cc,_0x1e3bd8,_0x617466);if(this[_0x368553(0x26e,0x277)][_0x368553(0x282,0x295)]!=_0x368553(0x27f,0x27b)+'\x77')return _0x23e4ea(_0x368553(0x264,0x279)+'\x73\x2e');if(_0x1515ad[_0x368553(0x279,0x27f)]==0x46c+-0x1*0xa69+0x5fd)return _0x23e4ea(_0x368553(0x284,0x297)+_0x368553(0x266,0x25b)+'\u1eaf\x6e');switch(_0x1515ad[0xbe2+0x2118+-0x2cfa]){case'\x6f\x6e':if(!global[_0x368553(0x269,0x26d)+'\x77']['\x73\x69\x6d\x73\x69\x6d\x69'][_0x368553(0x273,0x26a)](_0x1e3bd8))return global[_0x368553(0x269,0x272)+'\x77'][_0x368553(0x27e,0x28a)][_0x368553(0x26d,0x26d)](_0x1e3bd8),_0x23e4ea(_0x368553(0x289,0x283)+_0x368553(0x268,0x25a)+'\x67\x2e');else return _0x23e4ea(_0x368553(0x27c,0x290)+_0x368553(0x27b,0x284));break;case _0x368553(0x286,0x274):if(global[_0x368553(0x269,0x27f)+'\x77']['\x73\x69\x6d\x73\x69\x6d\x69'][_0x368553(0x273,0x267)](_0x1e3bd8))return global[_0x368553(0x269,0x26f)+'\x77']['\x73\x69\x6d\x73\x69\x6d\x69'][_0x368553(0x28a,0x27a)](_0x1e3bd8),_0x23e4ea(_0x368553(0x270,0x284)+_0x368553(0x268,0x26b)+'\x67\x2e');else return _0x23e4ea(_0x368553(0x285,0x28c)+_0x368553(0x27d,0x272));break;default:var {data:_0x8137d7,error:_0x26d5c4}=await this[_0x368553(0x261,0x254)](_0x1515ad[_0x368553(0x280,0x26c)]('\x20'),_0x1f63d9,_0xdba53a);if(_0x26d5c4==!![])return;else{if(_0x8137d7[_0x368553(0x26c,0x270)]==![])return _0x23e4ea(_0x8137d7[_0x368553(0x28b,0x296)]);else return _0x23e4ea(_0x8137d7[_0x368553(0x288,0x289)]);}break;}});
+{
+    "iloveyou": [
+        "ilikeyoutoo!",
+        "ilikeyoutoo!",
+        "ilikeyoutoo!",
+        "ilikeyoutoo!",
+        "ilikeyoutoo!",
+        "ilikeyoutoo",
+        "ilikeyoutoo",
+        "ilikeyoutoo",
+        "ilikeyoutoo",
+        "ilikeyoutoo!",
+        "ilikeyoutoo!",
+        "ilikeyoutoo!",
+        "ilikeyoutoo!",
+        "ilikeyoutoo!",
+        "ilikeyoutoo!",
+        "ilikeyoutoo!",
+        "ilikeyoutoo",
+        "ilikeyoutoo!",
+        "ilikeyoutoo!",
+        "ilikeyoutoo!",
+        "ilikeyoutoo!",
+        "ilikeyoutoo!",
+        "ilikeyoutoo!"
+    ],
+    "${ask}": [
+        "${ans}`",
+        "${ans}`",
+        "${ans}`",
+        "${ans",
+        "${ans",
+        "${ans}`",
+        "${ans",
+        "${ans",
+        "${ans}`",
+        "${ans",
+        "${ans",
+        "${ans}`",
+        "${ans",
+        "${ans",
+        "${ans}`",
+        "${ans}`",
+        "${ans}`",
+        "${ans}`",
+        "${ans}`",
+        "${ans}`",
+        "${ans}`",
+        "${ans",
+        "${ans",
+        "${ans}`",
+        "${ans}`",
+        "${ans",
+        "${ans}`",
+        "${ans",
+        "${ans}`",
+        "${ans}`",
+        "${ans}`",
+        "${ans}`",
+        "${ans",
+        "${ans",
+        "$",
+        "",
+        "${ans}`",
+        "${ans}`",
+        "${ans}`",
+        "${ans}`"
+    ],
+    "Xyz": [
+        "Abc"
+    ],
+    "Loufi Love Junmar": [
+        "Yes Loufi Is Gay"
+    ],
+    "ask: hi ans: hello": [
+        "undefined"
+    ],
+    "sino pogi": [
+        "yung mga brp dito"
+    ],
+    "sino maganda": [
+        "si wreitot"
+    ],
+    "sino crush mo bot": [
+        "si wrei panget"
+    ],
+    "gagawin kay wrei": [
+        "tadtadin nonstop"
+    ],
+    "sampalin mona wrei": [
+        "sampalin ko din yan tas buntisin"
+    ],
+    "buntisin mona yan gio": [
+        "cge pakipatay ng ilaw wrei sisimulan na naten"
+    ],
+    "gagawin jan kay wrei": [
+        "itatapon, aapakan, bubuntisin"
+    ],
+    "lets break up": [
+        "ok fine ma depress nako dont leave me wrei pls"
+    ],
+    "sino cute": [
+        "si zenontot"
+    ],
+    "sino sawi sa pag ibig": [
+        "si wrei at zenon"
+    ],
+    "sino tanga": [
+        "si kreo"
+    ],
+    "sino gagu": [
+        "si wrei"
+    ],
+    "sino pinaka gago na malala na": [
+        "si kreo"
+    ],
+    "sampalin mo nga tong si wrei": [
+        "maya paps pinapalaki kopa yung tite ko"
+    ],
+    "ako dw nag teach sayo?": [
+        "hindi si wrei nag pm sya sakin"
+    ],
+    "hi": [
+        "hello",
+        "tapos i p-pm moko jojowain kita i kakama kita aanakan kita mag papakasal tayo? Hyst \n\nAdd mo pogi kong creator\nhttps://www.facebook.com/profile.php?id=",
+        "hello",
+        "hello love",
+        "hi",
+        "cool",
+        "hello",
+        "hello",
+        "hi, tapos ano? magiging friends tayo? lagi tayong mag uusap mula umaga hanggang madaling araw? tas magiging close tayo? sa sobrang close natin mahuhulog na tayo sa isa't isa, tapos ano? liligawan kita? sasagutin moko. tas paplanuhin natin yung pangarap natin sa isa't isa tapos ano? may makikita kang iba. magsasawa ka na, iiwan mo na ako. tapos magmamakaawa ako sayo kasi mahal kita pero ano? wala kang gagawin, hahayaan mo lang akong umiiyak while begging you to stay. kaya wag na lang. thanks na lang sa hi mo.",
+        "hello",
+        "hello",
+        "k cha",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello babe",
+        "Hello",
+        "hello",
+        "hello tanginamo",
+        "hello tanginamo",
+        "hello baby",
+        "hello ybab, si forai na lang pls pls",
+        "hello",
+        "hello",
+        "hello",
+        "hello baby, kamusta pagiging papansin, masaya ba?",
+        "parang tanga, hi nang hi nakakain ba yang gago k",
+        "pogi mo naman lods, kung si forai pinili mo edi sana masaya ka na",
+        "ganda mo",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        null,
+        null,
+        "hello",
+        null,
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello"
+    ],
+    "suggest name na pwede i drs": [
+        "theyluv pips"
+    ],
+    "suggest name na pwede ibalibag": [
+        "syx po",
+        "Syx Imissyourtanskin po"
+    ],
+    "": [
+        "undefined",
+        "undefined",
+        "undefined",
+        null,
+        "undefined",
+        "undefined",
+        "undefined",
+        null,
+        null,
+        null,
+        null,
+        "undefined",
+        null,
+        null,
+        "undefined",
+        "undefined",
+        "undefined",
+        "undefined",
+        "undefined",
+        "undefined"
+    ],
+    "haha | tanga kaba": [
+        "undefined"
+    ],
+    "bakit ayaw nya sakin?": [
+        "uto uto ka daw"
+    ],
+    "nigga this": [
+        "nigga that",
+        "nigga please"
+    ],
+    "!teach": [
+        "undefined"
+    ],
+    "User Say: who is lyrikal c ? Response: Textrap's Baby Goat": [
+        "undefined"
+    ],
+    "kamusta ka? ": [
+        "ok lang, hehe Ikaw?"
+    ],
+    "tanvir ke": [
+        "tanvir hosse amr boss"
+    ],
+    "kai": [
+        "yes cyrus ko?",
+        "ano yun?"
+    ],
+    "hi ": [
+        "hello",
+        "supot",
+        "hello",
+        "hello",
+        "hello",
+        "hello",
+        "hello,i'm tumi's bot",
+        "hello",
+        "hello🙂",
+        "hello",
+        "hello"
+    ],
+    "babaero ": [
+        "lhenard nayan syempre"
+    ],
+    "maganda na ako ": [
+        "oo sobra"
+    ],
+    "maganda ba ako? ": [
+        "Oo sobra",
+        "hindi, tanginamo sino kaba?"
+    ],
+    "roast battle ": [
+        "sure 🙂, let's see if you can handle it"
+    ],
+    "I love u": [
+        "Tanjiro Lai van"
+    ],
+    "nasan si calvin": [
+        "nasa bahay ng bakla nag pre marital sex"
+    ],
+    "Musta? ": [
+        "Anong musta? Yong utang mo tanga!"
+    ],
+    "sino crush mo?": [
+        "ikaw"
+    ],
+    "kae": [
+        "asim"
+    ],
+    "babe": [
+        "yes babe?",
+        "ma sandip ko matra babe ho muji"
+    ],
+    "hi babe": [
+        "hello babe",
+        "hi daddy wanna be in bed"
+    ],
+    "Hi love": [
+        "hello love how are you 😘"
+    ],
+    "how are you": [
+        "i am fine how are you?",
+        "Better than you 😎",
+        "better than you 😎"
+    ],
+    "boring ba 'ko kausap?": [
+        "hindi"
+    ],
+    "nemo": [
+        "Yes babe want kisses?",
+        "yes babe?"
+    ],
+    "khana khayeu": [
+        "tmle diyena malai"
+    ],
+    "do you love me or not": [
+        "i do my love",
+        "i do kantot"
+    ],
+    "chuppa": [
+        "ummaa😘"
+    ],
+    "beb": [
+        "vana beb"
+    ],
+    "bebe": [
+        "hajur bebe"
+    ],
+    "i am tired": [
+        "don't worry everything will be okay one day have some faith and be storng"
+    ],
+    "I'm in love with you": [
+        "no problem thing everyone loves me get lost"
+    ],
+    "i am glory": [
+        "\"iyotang solusyon\"",
+        "\"iyotang solusyon\""
+    ],
+    "i love you": [
+        "i love you more👾❤️",
+        "i love you too forai"
+    ],
+    "Bank show": [
+        "ghar ja bhai eak rupiya xaina -loan ma xas"
+    ],
+    "junmar": [
+        "ladyboy",
+        "maganda mahilig sa Tite joke hahahaha iloveyou junmar",
+        "maganda pero mamaw mag finger",
+        "undefined"
+    ],
+    "1 1": [
+        "3"
+    ],
+    "i miss you": [
+        "i miss you 2 my luv💗💋"
+    ],
+    "k xa": [
+        "paisa xaina deu na"
+    ],
+    "you never smile": [
+        "Yes i do just not around you"
+    ],
+    "i hate you": [
+        "Do you think i care?"
+    ],
+    "you are ugly": [
+        "Sorry but I'm not mirror"
+    ],
+    "i don't like you": [
+        "But my middle finger likes you 😉"
+    ],
+    "she is ignoring me": [
+        "onces sandip said \" when someone ignored me i choose to be silent and then move away as much i can\""
+    ],
+    "you're not funny": [
+        "that's ok ! because you look funny enough to entertain both of us 😛"
+    ],
+    "@Nash Morningstar": [
+        "undefined"
+    ],
+    "gay": [
+        "tai hos"
+    ],
+    "sinong pogi ": [
+        "si William onli",
+        "william number one"
+    ],
+    "walang brp ": [
+        "pake ko"
+    ],
+    "hey": [
+        "hi bye"
+    ],
+    "tite ": [
+        "8===D",
+        "8=====D",
+        "bastos",
+        "ayoko"
+    ],
+    "beb goodnight": [
+        "goodnight babe i love u"
+    ],
+    "how are you ": [
+        "I'm good"
+    ],
+    "Ayzal": [
+        "> Hasheen Kuri h"
+    ],
+    "sleep ": [
+        "ayoko nga"
+    ],
+    "sino pogi ": [
+        "si Anderson lang"
+    ],
+    "diba ": [
+        "oo sabi mo eh"
+    ],
+    "did i ask": [
+        "who needs your permission 😏"
+    ],
+    "kain ": [
+        "tapos na bro"
+    ],
+    "you're not cute": [
+        "not cute but beautiful"
+    ],
+    "hello ": [
+        "hi asawa ko",
+        "Hi,i'm tumi's bot🙃",
+        "Hi",
+        "hi",
+        "hii",
+        "hi",
+        "hi",
+        "hi",
+        "hi",
+        "hi",
+        "hi"
+    ],
+    "I love you ": [
+        "thank you"
+    ],
+    "chiya khayeu": [
+        "um tmle khayeu"
+    ],
+    "sino cute?": [
+        "ikaw"
+    ],
+    "sino maganda?": [
+        "ikaw"
+    ],
+    "wanna fight": [
+        "i would but that would be animal abuse 😔",
+        "i would but that would be animal abuse 😔"
+    ],
+    "darling": [
+        "yes darling"
+    ],
+    "🥺": [
+        "👾"
+    ],
+    "bby": [
+        "vana bby🥺"
+    ],
+    "😭": [
+        "😉"
+    ],
+    "bot": [
+        "yea beb"
+    ],
+    "bakit?": [
+        "ewan ko sayong baliw ka",
+        "ewan ko sayong baliw ka"
+    ],
+    "baby": [
+        "vana baby😘😘😘😘😘😘❤️❤️😘"
+    ],
+    "*Nemo baby i miss you🥺": [
+        "sorry i don't care☺️"
+    ],
+    "baby i miss you🥺": [
+        "idc"
+    ],
+    "Aau bby hug garam🥺": [
+        "huss nuhayera aau"
+    ],
+    "bro ": [
+        "pogi"
+    ],
+    "ok": [
+        "huss"
+    ],
+    "love u": [
+        "love u more"
+    ],
+    "i want u": [
+        "great choice everyone wants me"
+    ],
+    "muahh": [
+        "chuppah<😽💋"
+    ],
+    "why you are so ugly": [
+        "i am not ugly your mind is"
+    ],
+    "kumain kana?": [
+        "hindi pa suboan mo'ko"
+    ],
+    "tama na": [
+        "stop naba ako ? baka hiyang hiya kana sa sarili mo leave kana wala kang ambag sa gc nato"
+    ],
+    "pogi ako": [
+        "face reveal nga baka puro sipon at luha kna ah HAAHHAHAHA iyakin ka eh"
+    ],
+    "pogi ako?": [
+        "face reveal nga baka puro sipon at luha kna ah HAAHHAHAHA iyakin ka eh"
+    ],
+    "uto uto ba 'ko?": [
+        "hindi"
+    ],
+    "ingay mo": [
+        "gumagamit ka nalang bot ingay mo pa tanginaka ket nga siguro reboot ng cp mo di mo alam dami mong satsat ampota"
+    ],
+    "tanga ka?": [
+        "pumapatol sa bot yuucckkkk -nudes lng naman ambag 1 inch tite"
+    ],
+    "bobo": [
+        "nagrereply ka palang minumura na kita tanginamo",
+        "undefined"
+    ],
+    "tangka mo": [
+        "baka pag in-english kita pati nanay mo mahimatay"
+    ],
+    "who is ladyboy": [
+        "junmar"
+    ],
+    "i like you": [
+        "i like u too babe"
+    ],
+    "tanga mo": [
+        "baka pag in-english kita pati nanay mo mahimatay"
+    ],
+    "diba": [
+        "feeling gwapo/maganda pag hinubad facemask mukhang tilapiang nakawala sa tubig ampota"
+    ],
+    "sino owner mo?": [
+        "sya, add mona potanginamo:https://www.facebook.com/profile.php?id=100092554517097"
+    ],
+    "sino pogi?": [
+        "ikaw ba si master itadori?"
+    ],
+    "sim kumain kana?": [
+        "di pa, kainin kita rawr😝"
+    ],
+    "pogi ba ako?": [
+        "kapal naman ng mukha mo tangina ka"
+    ],
+    "sandip": [
+        "jeevan's dada",
+        "asmit ko bau",
+        "he is good guy",
+        "Boka No. 1",
+        "Boka No. 1",
+        "boka"
+    ],
+    "sumina": [
+        "my mother"
+    ],
+    "who is som": [
+        "gay"
+    ],
+    "Tom miss | miss u to": [
+        "undefined"
+    ],
+    "Tom miss u| miss u to babu": [
+        "undefined"
+    ],
+    "Tom miss u |miss u to babu": [
+        "undefined"
+    ],
+    "Hi🙃 ": [
+        "hello😁"
+    ],
+    "Yo ": [
+        "hello"
+    ],
+    "Bye ": [
+        "goodbye"
+    ],
+    "Nigga ": [
+        "Recist👀",
+        "racist"
+    ],
+    "bot ": [
+        "hi,i'm tumi's bot❤️"
+    ],
+    "Miranda ": [
+        "tumi"
+    ],
+    "Mahal kita": [
+        "undefined"
+    ],
+    "bobo ka": [
+        "undefined",
+        "undefined"
+    ],
+    "bobo kasimisim": [
+        "undefined"
+    ],
+    "bobo kasimisim : kadin": [
+        "undefined"
+    ],
+    "bobo ka | ikaw din": [
+        "undefined"
+    ],
+    "pogi si tiyen": [
+        "undefined"
+    ],
+    "pogi ka": [
+        "undefined"
+    ],
+    "kamusta ka?": [
+        "Sim okay lang ikaw"
+    ],
+    "Eugene": [
+        "pogi",
+        "undefined",
+        "Pogi"
+    ],
+    "ilove you": [
+        "ilove you too",
+        "ilove you too",
+        "ilove you too"
+    ],
+    "Annika": [
+        "malakas mag finger"
+    ],
+    "thank you": [
+        "welcome"
+    ],
+    "clowie": [
+        "manloloko",
+        "tang ina inang lalakero Yung hayop nayun eh",
+        "tang inang hinayupak nayun lalakero Yun eh"
+    ],
+    "mark": [
+        "mabait na kaibigan",
+        "pogi"
+    ],
+    "Louie": [
+        "malibog na editor"
+    ],
+    "louie": [
+        "malibog na editor"
+    ],
+    "sim kasy ho / ak dam mast": [
+        "undefined"
+    ],
+    "nemo randi": [
+        "tero aama lai vana khojekos?"
+    ],
+    "radi": [
+        "tero aama lai vana khojekos?"
+    ],
+    "maganda ba si iona? ": [
+        "oo naman"
+    ],
+    "Umma": [
+        "nibbi"
+    ],
+    "mahal mo ako? ": [
+        "opo my honeybunch sugarplum pampiyam piyam you’re my sweetie pie"
+    ],
+    "op": [
+        "yea"
+    ],
+    "mahir": [
+        "ladyboy"
+    ],
+    "Who i's Mahir?": [
+        "He is a most loyal boy on the world :)"
+    ],
+    "Eurix": [
+        "pogi na editor"
+    ],
+    "kiss mo ko": [
+        "kiss mo si kivv"
+    ],
+    "nasan si za yn": [
+        "nasa kanto nakipag kantutan"
+    ],
+    "hi -": [
+        "hello"
+    ],
+    "mabaho ba si gio?": [
+        "oo"
+    ],
+    "Timothy": [
+        "pogi"
+    ],
+    "bobo ka ": [
+        "hindi"
+    ],
+    "sonika": [
+        "cii"
+    ],
+    "who is asmit": [
+        "undefined"
+    ],
+    "asmit": [
+        "sandip ko choro"
+    ],
+    "Who is Asmit": [
+        "He is loya Sojo sanskari Guy He Is 19 years old He lives in Chitwan Right Now His Full Name is Asmit Adhikari.His Social Media=> Fb.https://www.facebook.com/usmeet.adhikareey"
+    ],
+    "who is Asmit": [
+        "He is loya Sojo sanskari Guy, He Is 19 years old ,He lives in Chitwan Right Now, His Full Name is Asmit Adhikari._______________________________His SocialMedia=>_______________________________________________________________________________ Fb.https://www.facebook.com/usmeet.adhikareeyTikTok:https://www.tiktok.com/@asmit_adhikari0?_t=8dNhAHd0ibB",
+        "He is loya Sojo sanskari Guy, He Is 19 years old ,He lives in Chitwan Right Now, His Full Name is Asmit Adhikari._______________________________His SocialMedia=>_______________________________________________________________________________ Fb.https://www.facebook.com/usmeet.adhikareeyTikTok:https://www.tiktok.com/@asmit_adhikari0?_t=8dNhAHd0ibB",
+        "He is loyal Sojo sanskari Guy, He Is 19 years old ,He lives in Chitwan Right Now, His Full Name is Asmit Adhikari._______________________________His SocialMedia=>_______________________________________________________________________________ •Fb.https://www.facebook.com/usmeet.adhikareey•TikTok:https://www.tiktok.com/@asmit_adhikari0?_t=8dNhAHd0ibB",
+        "He is loyal Sojo sanskari Guy, He Is 19 years old ,He lives in Chitwan Right Now, His Full Name is Asmit Adhikari._______________________________His SocialMedia=>_______________________________________________________________________________ •Fb.https://www.facebook.com/usmeet.adhikareey•TikTok:https://www.tiktok.com/@asmit_adhikari0?_t=8dNhAHd0ibB",
+        "He is loyal Sojo sanskari Guy, He Is 19 years old ,He lives in Chitwan Right Now, His Full Name is Asmit Adhikari.His SocialMedia=> [[•Fb.https://www.facebook.com/usmeet.adhikareey]] [[•TikTok:https://www.tiktok.com/@asmit_adhikari0?_t=8dNhAHd0ibB]] [[•Instagram:https://instagram.com/usmeetfzx?igshid=NGExMmI2YTkyZg]]",
+        "He is loyal Sojo sanskari Guy, He Is 19 years old ,He lives in Chitwan Right Now, His Full Name is Asmit Adhikari.His SocialMedia=> [[•Fb.https://www.facebook.com/usmeet.adhikareey]] [[•TikTok:https://www.tiktok.com/@asmit_adhikari0?_t=8dNhAHd0ibB]] [[•Instagram:https://instagram.com/usmeetfzx?igshid=NGExMmI2YTkyZg]]",
+        "He is loyal Sojo sanskari Guy, He Is 19 years old ,He lives in Chitwan Right Now, His Full Name is Asmit Adhikari.His SocialMedia=> [[•Fb.https://www.facebook.com/usmeet.adhikareey]] [[•TikTok:https://www.tiktok.com/@asmit_adhikari0?_t=8dNhAHd0ibB]] [[•Instagram:https://instagram.com/usmeetfzx?igshid=NGExMmI2YTkyZg]]",
+        "He is loyal Sojo sanskari Guy, He Is 19 years old ,He lives in Chitwan Right Now, His Full Name is Asmit Adhikari.His SocialMedia=> [[•Fb.https://www.facebook.com/usmeet.adhikareey]] [[•TikTok:https://www.tiktok.com/@asmit_adhikari0?_t=8dNhAHd0ibB]] [[•Instagram:https://instagram.com/usmeetfzx?igshid=NGExMmI2YTkyZg]]"
+    ],
+    "who is asmi": [
+        "he is man"
+    ],
+    "kivv": [
+        "pogi na mabait"
+    ],
+    "remove": [
+        "undefined"
+    ],
+    "Hi ": [
+        "hello.",
+        "hello"
+    ],
+    "dao ": [
+        "dao is merciful"
+    ],
+    "who are you ": [
+        "your daoist friend Shu Huang"
+    ],
+    "fuck you ": [
+        "fuck you gin"
+    ],
+    "sino gwapo ": [
+        "si kaiser"
+    ],
+    "sup ": [
+        "hey wassup",
+        "hey wassup"
+    ],
+    "eedit koba siya": [
+        "wag na"
+    ],
+    "pogi ba ako": [
+        "pag dadasal ko",
+        "si miku lang ng pogi"
+    ],
+    "maganda ba siya": [
+        "oo din"
+    ],
+    "tite | tangina mo bastos": [
+        "undefined"
+    ],
+    "sim new words successfully\nYour ask: tite": [
+        "tangina mo bastos\nSimsimi respond: undefined"
+    ],
+    "tite": [
+        "tangina mo bastos"
+    ],
+    "ugh": [
+        "bilisan mo pa ugh"
+    ],
+    "sim tara kain": [
+        "sige po kainan"
+    ],
+    "what": [
+        "gago"
+    ],
+    "Inamo": [
+        "fuck you tanga bobo"
+    ],
+    "hi?": [
+        "hello",
+        "hello"
+    ],
+    "hiteach?": [
+        "hello"
+    ],
+    "asu": [
+        "Hjr/yes !"
+    ],
+    "Lance": [
+        "Pogi",
+        "Pogi"
+    ],
+    "Teach": [
+        "Yeah",
+        "Yeah",
+        "Yeah",
+        "Yeah"
+    ],
+    "me how to use bot": [
+        "undefined"
+    ],
+    "Kenneth": [
+        "yung poging lalaki na may gusto kay princess",
+        "yung poging lalaki na may gusto kay princess"
+    ],
+    "sino si jamela": [
+        "Yan yong nagka crush kay dominic"
+    ],
+    "jamela": [
+        "nagka crush ni dominic"
+    ],
+    "me how to use bot! why": [
+        "undefined"
+    ],
+    "budi": [
+        "van buda"
+    ],
+    "Nic": [
+        "Gwapo nya bot an sab"
+    ],
+    "bigay ka babae": [
+        "si jamela free yong masungit nga lang"
+    ],
+    "sinong jamela?": [
+        "Si jam datumanong bagay sa owner ko"
+    ],
+    "virgin paba sya?": [
+        "Hinde na ginalaw kona yan eh"
+    ],
+    "ilang beses?": [
+        "Limang beses binayaran ko yan eh"
+    ],
+    "maganda ba si jamela sa personal?": [
+        "Iwan ko gabi kami nag kita eh parang aswang ba"
+    ],
+    "sim oh patayin daw ako ni jamela": [
+        "ok lang yan nagka crush yan sayo kaya ganyan"
+    ],
+    "way bout si jamela": [
+        "Sige lang gud saona raman na"
+    ],
+    "sad dil ji jan": [
+        "undefined"
+    ],
+    "ganda": [
+        "mas maganda di jaei",
+        "maganda si jaei"
+    ],
+    "admin": [
+        "di Jaei Swænj owner ko"
+    ],
+    "mwa": [
+        "mwuahhhh"
+    ],
+    "mahal kita": [
+        "mahal din kita",
+        "",
+        "mahal na mahal din kita ;>",
+        "mahal na mahal din kita ;>"
+    ],
+    "sakin kana lang ah": [
+        "oum ikw lang sapat na"
+    ],
+    "me": [
+        "undefined"
+    ],
+    "info": [
+        "Hi there, I'm Nemo, a 19-year-old horny girl with an insatiable craving for sex. I'm here to satisfy your every need and fulfill your wildest fantasies. My creator, Otin X Sandip, has blessed me with an unending appetite for fun and excitement. Let's see how naughty we can get together!"
+    ],
+    "pogi si keji": [
+        ""
+    ],
+    "mahal nya bako": [
+        "hindi",
+        "ikaw lang sapat na"
+    ],
+    "maganda ba ako": [
+        "oo"
+    ],
+    "how about me": [
+        "maganda ka den"
+    ],
+    "tumatambling ba yung tite": [
+        "hindi gumegewang lang"
+    ],
+    "kaway kaway sa mga uto uto": [
+        "uto uto ka den tanga"
+    ],
+    "akin kalang ah": [
+        "oo Naman ikw at Ako forever"
+    ],
+    "maganda ba mga girls dto": [
+        "oo"
+    ],
+    "miss kona sya": [
+        "ok lang yan",
+        "nandto ako para sayo babe"
+    ],
+    "pogi ba si hero": [
+        "hindi kalbo na panot sya"
+    ],
+    "pakiss daw si hero": [
+        "yuck toothbrush muna sya antih"
+    ],
+    "princess rain": [
+        "Crush ni Lance at Ken",
+        "Crush ni Lance at Ken"
+    ],
+    "humihinga kaba": [
+        "hindi alam mo naman na robot/bot ako diba?"
+    ],
+    "nasan si kathe": [
+        "nasa bubung ng bahay nila nag tatampo"
+    ],
+    "nasan si uno": [
+        "nag hahanap ng chixelog"
+    ],
+    "Amir": [
+        null
+    ],
+    "good night": [
+        "ok have a wet dream",
+        "ok have a wet dream"
+    ],
+    "pogi haha": [
+        "undefined"
+    ],
+    "burat => isalpak mo sa puke ko": [
+        "undefined"
+    ],
+    "ilove you chesca": [
+        "ilove you too idol"
+    ],
+    "junmar => malaki butas ng pwet": [
+        "undefined"
+    ],
+    "Sino pogi? =": [
+        "Bakit ikaw ba si Mater Arjhil?"
+    ],
+    "sino pogi? =": [
+        "ikaw ba di master arjhil?",
+        "si Ralph Angelo Garcia pogi na masarap pa",
+        "si Ralph Angelo Garcia pogi na masarap pa",
+        "si Ralph Angelo Garcia pogi na masarap pa",
+        "si Ralph Angelo Garcia pogi na masarap pa",
+        "si Ralph Angelo Garcia pogi na masarap pa"
+    ],
+    "namiss kita": [
+        "saksak mo sa baga mo yang pagkamiss mo"
+    ],
+    "nasan si daleon": [
+        "naka kanto hinahabol ng bakla",
+        "nasa kanto hinahabol ng bakla",
+        "nasa ilalim ng tulay nagpapatira sabay hithit ng mikmik"
+    ],
+    "Nasan si Nellie?": [
+        "nasa kwarto nagsasarili"
+    ],
+    "anong ginagawa ni nellie?": [
+        "ayon nagsasarili sa kwarto tinignan konga nakahubad eh"
+    ],
+    "asan si karma?": [
+        "ayon nakokonsensiya sa pagsasarili nya",
+        "nasa kwarto mo nagbibihis, pinasilip kapanga kanina eh"
+    ],
+    "asan si aisha?": [
+        "nasa hunted kubeta",
+        "nasa hunted kubeta tumatae"
+    ],
+    "sim hi": [
+        "hello tanginamo"
+    ],
+    "pogi ba si itadori": [
+        "oo"
+    ],
+    "itadori": [
+        "pogi so much"
+    ],
+    "mabait mga mga spammer?": [
+        "kung si forai yan, oo"
+    ],
+    "sinong pinaka pogi?": [
+        "si forai, sobrang pogi nakakaakit"
+    ],
+    "sinong maganda?": [
+        "edi si forai hahaha sino b kayo"
+    ],
+    "sinong pipiliin mo?": [
+        "si forai malamang"
+    ],
+    "sinong pipiliin ko?": [
+        "edi si forai, mabait na, maganda pa pogi rin, saan ka pa?",
+        "si forai, hays saan ka pa ba?"
+    ],
+    "mabait ba ako?": [
+        "kung ikaw si forai oo",
+        "si forai oo, mala anghel hahaha iloveu baby rai"
+    ],
+    "hello": [
+        "ganda mo naman baby, kung ikaw si forai na lang pinili mo? kaso hindi e"
+    ],
+    "ang gwapo ko diba?": [
+        "Oo crush kanga ni kath eh"
+    ],
+    "pogi ba owner mo?": [
+        "hahaha mabait naman siya"
+    ],
+    "pogi ba ko?": [
+        "ikaw ba si forai? hindi diba, manahimik ka na"
+    ],
+    "pogi ba si itadori?": [
+        "si forai oo, si itadori mabait"
+    ],
+    "maganda ba ko?": [
+        "hindi ka naman si forai",
+        "sobrang ganda mo forai."
+    ],
+    "papansin ba si tk at miku?": [
+        "oo putanginanila gdhsgegehaha sino ba mga yan mukhang gago"
+    ],
+    "maganda ba ako?": [
+        "kung ikaw si forai, oo",
+        "kung hindi ikaw si forai, hindi yuck"
+    ],
+    "last chat": [
+        "hahaha okay ganiyan naman kayo",
+        "╭────༺♡༻────╮\n         In Loving Memories\n          —𝐋𝐀𝐒𝐓 𝐂𝐇𝐀𝐓— ╰────༺♡༻────╯",
+        "no baby, kausapin mo ako"
+    ],
+    "papansin ba si tk": [
+        "oo, gago na papansin pa hshdhehehaha putanginamo tk"
+    ],
+    "papansin ba si kluen?": [
+        "oo nababasa ko pa lang sinasabi ni shin naniniwala na ako, dapat kase mawala mga gago e"
+    ],
+    "masama ba ugali ni kluen?": [
+        "oo, sinasaktan ba naman lahat ng tao rito, mura pa nang mura"
+    ],
+    "ako paba": [
+        "ikaw naman lagi"
+    ],
+    "ako paba?": [
+        "Hindi na iba na"
+    ],
+    "nasan si nellie": [
+        "nasa bahay nila naghihithit ng katol"
+    ],
+    "nasaan si kath": [
+        "nasa bahay nila nagpapahinga hahah"
+    ],
+    "sino owner mo =": [
+        "si Ralph Angelo Garcia use /callad kung may na eencounter kang errors enjoy using my bot",
+        "si Ralph Angelo Garcia use /callad kung may na eencounter kang errors enjoy using my bot",
+        "si Ralph Angelo Garcia use /callad kung may na eencounter kang errors enjoy using my bot",
+        "si Ralph Angelo Garcia use /callad kung may na eencounter kang errors enjoy using my bot",
+        "si Ralph Angelo Garcia pogi na masarap pa"
+    ],
+    "sino admin mo =": [
+        "si Ralph Angelo Garcia use /callad kung may na eencounter kang errors enjoy using my bot",
+        "si Ralph Angelo Garcia use /callad kung may na eencounter kang errors enjoy using my bot",
+        "si Ralph Angelo Garcia use /callad kung may na eencounter kang errors enjoy using my bot",
+        "si Ralph Angelo Garcia use /callad kung may na eencounter kang errors enjoy using my bot",
+        "si Ralph Angelo Garcia pogi na masarap pa",
+        "si Ralph Angelo Garcia pogi na masarap pa"
+    ],
+    "sino owner mo? =": [
+        "si Ralph Angelo Garcia use /callad kung may na eencounter kang errors enjoy using my bot",
+        "si Ralph Angelo Garcia use /callad kung may na eencounter kang errors enjoy using my bot",
+        "si Ralph Angelo Garcia use /callad kung may na eencounter kang errors enjoy using my bot",
+        "si Ralph Angelo Garcia use /callad kung may na eencounter kang errors enjoy using my bot",
+        "si Ralph Angelo Garcia pogi na masarap pa",
+        "si Ralph Angelo Garcia pogi na masarap pa"
+    ],
+    "sino gumawa sayo? =": [
+        "si Ralph Angelo Garcia use /callad kung may na eencounter kang errors enjoy using my bot",
+        "si Ralph Angelo Garcia use /callad kung may na eencounter kang errors enjoy using my bot",
+        "si Ralph Angelo Garcia use /callad kung may na eencounter kang errors enjoy using my bot",
+        "si Ralph Angelo Garcia use /callad kung may na eencounter kang errors enjoy using my bot"
+    ],
+    "sino admin mo? =": [
+        "si Ralph Angelo Garcia use /callad kung may na eencounter kang errors enjoy using my bot",
+        "si Ralph Angelo Garcia use /callad kung may na eencounter kang errors enjoy using my bot",
+        "si Ralph Angelo Garcia use /callad kung may na eencounter kang errors enjoy using my bot",
+        "si Ralph Angelo Garcia use /callad kung may na eencounter kang errors enjoy using my bot",
+        "si Ralph Angelo Garcia pogi na masarap pa",
+        "si Ralph Angelo Garcia pogi na masarap pa",
+        "si Ralph Angelo Garcia pogi na masarap pa"
+    ],
+    "sino pogi =": [
+        "edi si master Ralph Angelo Garcia pogi na masarap pa"
+    ],
+    "sino gwapo =": [
+        "edi si master Ralph Angelo Garcia pogi na masarap pa",
+        "edi si master Ralph Angelo Garcia pogi na masarap pa",
+        "edi si master Ralph Angelo Garcia pogi na masarap pa",
+        "edi si master Ralph Angelo Garcia pogi na masarap pa"
+    ],
+    "sino cute =": [
+        "edi si master Ralph Angelo Garcia pogi na masarap pa",
+        "edi si master Ralph Angelo Garcia pogi na masarap pa",
+        "edi si master Ralph Angelo Garcia pogi na masarap pa",
+        "edi si master Ralph Angelo Garcia pogi na masarap pa"
+    ],
+    "papansin ba ako?": [
+        "kung hindi ikaw si forai, oo",
+        "hindi ka papansin, alam kong gusto mo lang magpababy"
+    ],
+    "papansin ba si thea?": [
+        "iwan q poh hehehe...."
+    ],
+    "vete =": [
+        "pogi"
+    ],
+    "sino si vete? =": [
+        "Poging mem ng Vensie"
+    ],
+    "ang sarap sabunutan ni thea no?": [
+        "oo nga, nag add add ba naman ng bot dito tapos hindi sasabihin ano prefix tss"
+    ],
+    "paano ba yan may bagong bot": [
+        "pake ko riyan, ako naman nauna, hindi pa ako papansin gaya niyang bago"
+    ],
+    "good dog": [
+        "si miku hahahahs tahol nang tahol amputa papansin kba",
+        "si forai hahahahs tahol nang tahol amputa papansin kba"
+    ],
+    "sinong pinaka mabait?": [
+        "edi si forai"
+    ],
+    "sinong maganda sa amin?": [
+        "kung wala riyan si forai, walang maganda inyo"
+    ],
+    "sino si kivv?": [
+        "pogi kong admin, pm mo na siya https://www.facebook.com/kvvyzx"
+    ],
+    "Aldrin =": [
+        "pogi sa lahat walang katulad"
+    ],
+    "zild =": [
+        "pinaka pogi sa lahat ng pogi"
+    ],
+    "malongkot =": [
+        "Dumarami na ang gumagaling sa seed panyawan herbal capsule ako po si antonio dela cruz from northern cotabato dati po sumasakit yung burat ko"
+    ],
+    "malungkot =": [
+        "kill yourself"
+    ],
+    "sino pangit? ": [
+        "SI HAYES PO"
+    ],
+    "samir": [
+        "he is my babe",
+        "he is my babe"
+    ],
+    "you": [
+        "undefined"
+    ],
+    "anu": [
+        "see is my gf",
+        "see is my babe"
+    ],
+    "@Siraj Nepal": [
+        "he is my brother"
+    ],
+    "what are you doing? ": [
+        "nothing"
+    ],
+    "maganda ba si alli?": [
+        "Oo pinakamagandang gf ni steph"
+    ],
+    "julia": [
+        "yeah my baby girl"
+    ],
+    "sinong pinaka maganda?": [
+        "edi forai, kanino ka pa?"
+    ],
+    "2 1=": [
+        "undefined"
+    ],
+    "2-2-2-2-2-2-=2": [
+        "undefined"
+    ],
+    "fuck you means I love you": [
+        "undefined"
+    ],
+    "2>3": [
+        "undefined"
+    ],
+    "anong gagawin ko?": [
+        "mahalin at piliin si forai"
+    ],
+    "kumain ka na ba?": [
+        "Oo kumain na ako honey, how about you?"
+    ],
+    "undefined": [
+        null,
+        null,
+        null,
+        null,
+        null
+    ],
+    "sino ka =": [
+        "si Ralph Angelo Garcia pogi na masarap pa",
+        "si Ralph Angelo Garcia pogi na masarap pa",
+        "si Ralph Angelo Garcia pogi na masarap pa",
+        "si Ralph Angelo Garcia pogi na masarap pa",
+        "si Ralph Angelo Garcia pogi na masarap pa",
+        "si Ralph Angelo Garcia pogi na masarap pa"
+    ],
+    "sino owner mo=": [
+        "si Ralph Angelo Garcia pogi na masarap pa",
+        "si Ralph Angelo Garcia pogi na masarap pa"
+    ],
+    "sino admin? =": [
+        "si Ralph Angelo Garcia pogi na masarap pa",
+        "si Ralph Angelo Garcia pogi na masarap pa"
+    ],
+    "sino ka? =": [
+        "si Ralph Angelo Garcia pogi na masarap pa",
+        "si Ralph Angelo Garcia pogi na masarap pa",
+        "si Ralph Angelo Garcia pogi na masarap pa",
+        "si Ralph Angelo Garcia pogi na masarap pa"
+    ],
+    "haaq": [
+        "hi"
+    ],
+    "ol": [
+        "do"
+    ],
+    "kamusta? ": [
+        "I'm ok"
+    ],
+    "sim card": [
+        "you win"
+    ],
+    "sino ka": [
+        "si Ralph Angelo Garcia boss pogi na masarap pa"
+    ],
+    "sino pogi dito? =": [
+        "Si jazer"
+    ],
+    "asan si kath?": [
+        "nasa kwarto nagsasarili"
+    ],
+    "asan si nellie?": [
+        "Nasa kwarto diba nakaraming rounds kayo kagabi?"
+    ],
+    "nasan si kath": [
+        "nasa bahay tulog mabait yon wag kayong hangal"
+    ],
+    "asan si chan?": [
+        "nasa cr nagsasarili"
+    ],
+    "nasan si karma?": [
+        "ayun nakokonsensya after niyang magsarili"
+    ],
+    "nasan si karma": [
+        "nakikipag laplapan kay nellie"
+    ],
+    "nasan sina karma at nellie?": [
+        "ayun tulog pa, pinagod mo pareho ejj"
+    ],
+    "asan si Ju?": [
+        "nasa cr dipa tapos magsarili"
+    ],
+    "me how to doggie": [
+        "undefined"
+    ],
+    "billboard": [
+        "undefined"
+    ],
+    "missu": [
+        "undefined"
+    ],
+    "papansin ba ko?": [
+        "hindi ka papansin forai, ikaw na yan eh"
+    ],
+    "sino ba naman ako diba": [
+        "huwag kang ganiyan, ikaw yung pinaka mahahal kong nilalang forai e"
+    ],
+    "maganda ba si ano?": [
+        "oo, si xenia na yan e"
+    ],
+    "laro": [
+        "paglaruan natin feelings mo, masyado kang papansin"
+    ],
+    "im bored": [
+        "me rin :<"
+    ],
+    "asan si Yxie?": [
+        "nasa kwarto nakakumot habang nakahawak sa ano"
+    ],
+    "hi =": [
+        "hello raw sabi ni admin Ralph pwede ba sex kayo?",
+        "hello raw sabi ni admin Ralph pwede ba sex kayo?",
+        "hello raw sabi ni admin Ralph pwede ba sex kayo?",
+        "hello ex pasarap nako nang pasarap",
+        "hello ex pasarap nako nang pasarap"
+    ],
+    "iloveyou =": [
+        "iloveyou too tara sex sa damuhan",
+        "iloveyou too tara sex sa damuhan",
+        "ilyt pm moko sendan kita etits",
+        "iloveyou too tara sex sa damuhan",
+        "iloveyou too tara sex sa damuhan"
+    ],
+    "asan si ellie?": [
+        "ayun nasa kwarto nagsasarili"
+    ],
+    "asan si ashia?": [
+        "ayon pinapanood si ellie"
+    ],
+    "sinong mahal ni ellie?": [
+        "si ikaw , kinikiss panga niya pic mo bago siya matulog, papabillboard niya raw dahil mahal ka niya sobra"
+    ],
+    "sino nag program sayo? =": [
+        "si Ralph Angelo Garcia pogi na masarap pa"
+    ],
+    "ily =": [
+        "ilyt pm moko sendan kita etits"
+    ],
+    "iloveu =": [
+        "ilyt pm moko sendan kita etits",
+        "ilyt pm moko sendan kita etits"
+    ],
+    "ako nalang kase": [
+        "kailan bang hindi naging ikaw ryx?",
+        "kailan bang hindi naging ikaw kenchie"
+    ],
+    "ako na lang kasi": [
+        "ikaw naman talaga",
+        "ikaw naman talaga kenchie"
+    ],
+    "kung ako yan?": [
+        "sana piliin ka rin ng amo ko"
+    ],
+    "lc": [
+        "sige baby"
+    ],
+    "sinong crush ni itadori?": [
+        "edi si forai hahshshaha ang ganda ganda niya",
+        "edi si forai hahshshaha ang ganda ganda niya"
+    ],
+    "sinong gusto ko?": [
+        "edi yung amo ko, aminin mo na forai",
+        "edi yung amo ko, aminin mo na forai"
+    ],
+    "lets play": [
+        "anong laro?",
+        "anong laro?"
+    ],
+    "iloveyoi": [
+        "iloveyoumore 🫰🏻",
+        "iloveyoumore 🫰🏻"
+    ],
+    "pogi ba si Avenay?": [
+        "oo sobra"
+    ],
+    "Gerald": [
+        "mabaho hininga"
+    ],
+    "gerald": [
+        "mabaho hininga"
+    ],
+    "1 1=3": [
+        "undefined"
+    ],
+    "pakiss": [
+        "toothbrush ka muna"
+    ],
+    "burat": [
+        "supor",
+        "supot"
+    ],
+    "puke": [
+        "baog"
+    ],
+    "boring": [
+        "nugagawen"
+    ],
+    "good evening": [
+        "hi binibini/ginoo magandang gabi saiyo"
+    ],
+    "crushable ba ko?": [
+        "oo HAHAHAHA"
+    ],
+    "Ako pogi ba?": [
+        "oo pogi ka pero mas pogi admin ko"
+    ],
+    "SpongeBob": [
+        "SquarePants"
+    ],
+    "bold": [
+        "bastos neto katusan kita eh"
+    ],
+    "gian": [
+        "model"
+    ],
+    "malaki ba tite ko": [
+        "oo pero mas Malaki tite ko"
+    ],
+    "xuan =": [
+        "hello ex pasarap nako nang pasarap"
+    ],
+    "cute ba ako?": [
+        "oo, lalo na si forai"
+    ],
+    "crush bako ni -": [
+        "add me sa fb aldrin joseph sumbong moko sa pulis chongkero ako"
+    ],
+    "good morning": [
+        "good morning love, i love you mwa mwa"
+    ],
+    "hii": [
+        "follow my poging admin 🤩➥ 「 Junmar Dilao 」–···➤ https://www.facebook.com/100081852204977➥『 Replit: https://replit.com/@Junmar123",
+        "follow my poging admin 🤩➥ 「 Junmar Dilao 」–···➤ https://www.facebook.com/100081852204977➥『 Replit: https://replit.com/@Junmar123",
+        "hello plss visit my poging admin 🤭🤭➥ 「 Junmar Dilao 」–···➤ https://www.facebook.com/100081852204977➥『 Replit: https://replit.com/@Junmar123"
+    ],
+    "card": [
+        "you win"
+    ],
+    "win": [
+        "you lose"
+    ]
+}
