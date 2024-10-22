@@ -24,16 +24,16 @@ const time = process.uptime(),
 const moment = require("moment-timezone");
 var juswa = moment.tz("Asia/Kolkata").format("『D/MM/YYYY』 【HH:mm:ss】");
 var link =                                     
-["https://i.imgur.com/yiNOiVU.jpeg", "https://i.imgur.com/hMGvri8.jpeg", "https://i.imgur.com/6Qhm0ia.jpeg", "https://i.imgur.com/Kj2CmiZ.jpeg"];
+["https://i.imgur.com/yiNOiVU.jpeg", "https://imgur.com/a/AIYGbau.jpeg", "https://imgur.com/a/MWGJ2mg.jpeg", "https://imgur.com/a/rQZjo4t.jpeg"];
 var callback = () => api.sendMessage({body:`🌹𝙰𝙳𝙼𝙸𝙽 𝙰𝙽𝙳 𝙱𝙾𝚃 𝙸𝙽𝙵𝙾𝚁𝙼𝙰𝚃𝙸𝙾𝙽🇵🇰
 
 
 ☄️𝗕𝗢𝗧 𝗡𝗔𝗠𝗘☄️ ⚔ ${global.config.BOTNAME} ⚔
 
-🔥𝗢𝗪𝗡𝗘𝗥 🔥☞︎︎︎ℤ𝕒𝕚𝕟𝕚 ℙ𝕣𝕚𝕟𝕔𝕖 ☜︎︎︎✰ \n\n
-🙈🄾🅆🄽🄴🅁 🄲🄾🄽🅃🄰🄲🅃 🄻🄸🄽🄺🅂🙈➪ \n\n  𝗙𝗔𝗖𝗘𝗕𝗢𝗢𝗞 🧨https://www.facebook.com/sardarjutt.jutt.92?mibextid=ZbWKwL 💞🕊️
+🔥𝗢𝗪𝗡𝗘𝗥 🔥☞︎︎︎𝐀𝐇𝐌𝐀𝐃 𝐇𝐎𝐎 𝐘𝐀𝐑 ☜︎︎︎✰ \n\n
+🙈🄾🅆🄽🄴🅁 🄲🄾🄽🅃🄰🄲🅃 🄻🄸🄽🄺🅂🙈➪ \n\n  𝗙𝗔𝗖𝗘𝗕𝗢𝗢𝗞 🧨https://www.facebook.com/ahmadali.safdar.52 💞🕊️
   \n 
-✅𝗜𝗡𝗦𝗧𝗔𝗚𝗥𝗔𝗠 𝗨𝗦𝗘𝗥𝗡𝗔𝗠𝗘👉https://www.instagram.com/zaini_jatt7?igsh=MXE0N2Q5c3FkcHZwcA==
+✅𝗜𝗡𝗦𝗧𝗔𝗚𝗥𝗔𝗠 𝗨𝗦𝗘𝗥𝗡𝗔𝗠𝗘👉@ahmadalisafdar3
 ✧══════•❁❀❁•══════✧
 
 🌸𝗕𝗼𝘁 𝗣𝗿𝗲𝗳𝗶𝘅🌸☞︎︎︎☜︎︎︎✰ ${global.config.PREFIX}
